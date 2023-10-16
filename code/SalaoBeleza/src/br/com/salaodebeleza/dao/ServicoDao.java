@@ -17,6 +17,7 @@ public class ServicoDao {
             stmt.setString(1, servico.getNomeServico());
             stmt.setString(2, servico.getDescricaoServico());
             stmt.setFloat(3, servico.getValor());
+            stmt.executeUpdate();
 
         } catch (Exception e) {
             throw new RuntimeException(e);

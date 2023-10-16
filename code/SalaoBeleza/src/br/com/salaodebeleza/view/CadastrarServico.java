@@ -28,12 +28,14 @@ public class CadastrarServico {
 
                 String nome = textField1.getText().trim();
                 String descricao = textField2.getText().trim();
+                Float valor = Float.valueOf(textField3.getText().trim());
 
                 if(nome.isEmpty() && descricao.isEmpty()){/*estou usando o isEmpty para verificar se meu set esá vazio ou não, ele retona verdadeiro se o conjjunto está vazio, caso contrário retorna falso.*/
                     JOptionPane.showMessageDialog(null, "A descrição do produto é obrigatória", "Erro", JOptionPane.ERROR_MESSAGE);
                 } else{
                     servicoModel.setNomeServico(nome);
                     servicoModel.setDescricaoServico(descricao);
+                    servicoModel.setValor(valor);
 
                     try {
                         servicoDao.salvar(servicoModel);
